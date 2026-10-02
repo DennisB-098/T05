@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'DM Sans', sans-serif;
+  color: #202924;
+  background: #f3f5f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --ink: #202924;
+  --muted: #79827c;
+  --line: #e5e9e4;
+  --panel: #ffffff;
+  --green: #216c51;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 4% 0%, rgba(222, 235, 224, 0.7), transparent 32rem),
+    #f3f5f2;
+}
+
+.dashboard {
+  width: min(100% - 64px, 1240px);
+  margin: 0 auto;
+  padding: 54px 0 72px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+h1,
+h2 {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.header-note {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.chart-panel {
+  min-width: 0;
+  padding: 22px 22px 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 3px 12px rgba(32, 41, 36, 0.035);
+}
+
+.chart-panel h2 {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.chart-placeholder {
+  min-height: 230px;
+  border-top: 1px solid #f0f2ef;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 56px,
+    #f0f2ef 57px,
+    transparent 58px
+  );
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    width: min(100% - 36px, 560px);
+    padding-top: 36px;
+  }
+
+  .chart-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .chart-panel {
+    padding: 18px 18px 16px;
+  }
+
+  .chart-placeholder {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-header {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
